@@ -1,14 +1,11 @@
 <template>
-  <div
-    class="baseBeverage"
-    :style="{ backgroundColor: beverageStore.currentBase?.color }"
-  ></div>
+  <div class="baseBeverage" :style="{ backgroundColor: currentBase.color }"></div>
 </template>
 
 <script setup lang="ts">
-import { useBeverageStore } from "../stores/beverageStore";
-
-const beverageStore = useBeverageStore();
+  import { useBeverageStore } from "../stores/beverageStore";
+  import { storeToRefs } from "pinia";
+  const { currentBase } = storeToRefs(useBeverageStore());
 </script>
 
 <style scoped>
