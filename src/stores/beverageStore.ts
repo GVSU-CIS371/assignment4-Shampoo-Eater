@@ -3,13 +3,7 @@ import db from "../firebase";
 import {
   collection,
   addDoc,
-  onSnapshot,
-  deleteDoc,
-  doc,
-  query,
-  orderBy,
   getDocs,
-  writeBatch,
 } from "firebase/firestore";
 
 export interface Ingredient {
