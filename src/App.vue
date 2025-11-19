@@ -1,6 +1,7 @@
 <template>
   <div>
     <Beverage
+      v-if="currentBase && currentCreamer && currentSyrup"
       :is-iced="currentTemp === 'Cold'"
       :base="currentBase"
       :creamer="currentCreamer"
@@ -79,13 +80,16 @@
 
 <script setup lang="ts">
 import Beverage from "./components/Beverage.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useBeverageStore } from "./stores/beverageStore";
 import { storeToRefs } from "pinia";
 
 const beverageName = ref("");
 const beverageStore = useBeverageStore();
 const { temps, currentTemp, bases, currentBase, creamers, currentCreamer, syrups, currentSyrup } = storeToRefs(beverageStore);
+onMounted(() => {
+  (beverageStore as any).init && beverageStore.init();
+});
 </script>
 
 <style lang="scss">

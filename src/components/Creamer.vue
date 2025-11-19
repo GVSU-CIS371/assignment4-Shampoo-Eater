@@ -1,6 +1,6 @@
 <template>
   <div class="froth">
-    <div v-for=" in 5" class="foam"></div>
+    <div v-for="n in 5" class="foam"></div>
   </div>
 </template>
 
@@ -8,6 +8,12 @@
   import { useBeverageStore } from "../stores/beverageStore";
   import { storeToRefs } from "pinia";
   const { currentCreamer } = storeToRefs(useBeverageStore());
+import { watch } from "vue";
+
+watch(currentCreamer, (val) => {
+  // eslint-disable-next-line no-console
+  console.log("[Creamer] currentCreamer changed:", val && val.color);
+});
 </script>
 <style lang="scss" scoped>
 .froth {
@@ -22,7 +28,7 @@
 .foam {
   display: block;
   //background: #e4e0d2;
-  background: v-bind("currentCreamer.color");
+  background: v-bind("currentCreamer.color ?? transparent");
   border-radius: 30px;
   height: 40px;
   width: 40px;

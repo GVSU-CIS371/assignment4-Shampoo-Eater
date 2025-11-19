@@ -6,6 +6,12 @@
   import { useBeverageStore } from "../stores/beverageStore";
   import { storeToRefs } from "pinia";
   const { currentSyrup } = storeToRefs(useBeverageStore());
+import { watch } from "vue";
+
+watch(currentSyrup, (val) => {
+  // eslint-disable-next-line no-console
+  console.log("[Syrup] currentSyrup changed:", val && val.color);
+});
 </script>
 <style lang="scss" scoped>
 .syrup {

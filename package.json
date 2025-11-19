@@ -10,9 +10,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "all": "^0.0.0",
+    "firebase": "^12.6.0",
     "pinia": "^3.0.1",
     "pinia-plugin-persistedstate": "^4.2.0",
-    "vue": "^3.4.19"
+    "vue": "^3.5.24"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
@@ -26,5 +28,10 @@
     "typescript": "^5.2.2",
     "vite": "^6.2.3",
     "vue-tsc": "^2.2.8"
-  }
+  },
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/IKzkRFQi)\r # Project Details",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

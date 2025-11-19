@@ -6,6 +6,12 @@
   import { useBeverageStore } from "../stores/beverageStore";
   import { storeToRefs } from "pinia";
   const { currentBase } = storeToRefs(useBeverageStore());
+import { watch } from "vue";
+
+watch(currentBase, (val) => {
+  // eslint-disable-next-line no-console
+  console.log("[Base] currentBase changed:", val && val.color);
+});
 </script>
 
 <style scoped>
